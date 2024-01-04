@@ -41,7 +41,17 @@ int pop(node_t ** head)
 
 int remove_by_value(node_t ** head, int val) 
 {
-    /* TODO: fill in your code here */
+    /* TODO: remove the found pointer from list */
+    node_t * current = (*head);
+    while (current->val != val)
+    {
+        printf("Iterating through: %d\n", current->val);
+        current = current->next;
+    }
+    if (current->val == val)
+    {
+        printf("we found it :)\n");
+    }
 }
 
 int main() {
@@ -58,5 +68,5 @@ int main() {
 
     remove_by_value(&test_list, 3);
 
-    print_list(test_list);
+    //print_list(test_list);
 }
