@@ -85,7 +85,22 @@ void insert(node_t * tree, int val)
 /* depth-first search */
 void printDFS(node_t * current)
 {
-  /* change the code here */
+  /* depth-first pre-order */
+  node_t * base = current; // save current pointer to base pointer to use later
+  while (current != NULL) // if the current pointer is not null
+  {
+    printf("%d ", current->val); // print current pointer value
+    current = current->left; // set current pointer to left child pointer
+  }
+  current = base; // set current back to top of the tree (base pointer)
+  while (current != NULL) // if the current pointer is not null
+  {
+    if (current->right != NULL) // if current pointer has a right child pointer
+    {
+      printf("%d ", current->right->val); // print right child pointer value
+      current = current->right; // set current pointer to right child pointer
+    }
+  }
   if (current == NULL)         return;   /* security measure */
   if (current->left != NULL)   printDFS(current->left);
   if (current != NULL)         printf("%d ", current->val);
