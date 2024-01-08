@@ -6,18 +6,19 @@
 #include <stdio.h>
 
 /* define the union here */
-union Characters {
-  int intCharacters;
-  char chars[sizeof(int)];
+union Unify 
+{
+  int theInt[6];
+  char chars[21];
 };
+
 
 
 int main() 
 {
     // initializer lists like this are assigned to the first member of the union/struct!
     // There are 6 ints here so...
-    union Characters intCharacters;
-    intCharacters.intCharacters = {{1853169737, 1936876900, 1684955508, 1768838432, 561213039, 0}};
+    union Unify intCharacters = {{1853169737, 1936876900, 1684955508, 1768838432, 561213039, 0}};
   
     /* testing code */
     printf("[");
